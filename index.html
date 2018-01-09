@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Train Scheduler</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Boogaloo|Ubuntu" rel="stylesheet">
+</head>
+<body>
+
+<!--Navigation Bar - this will link to different sections of the page-->
+<nav id="navbar-example2" class="navbar">
+  <a class="logo font-weight-bold">Train Scheduler</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#schedule">Train Schedule</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#add">Add Train</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Image Jumbotron -->
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Find Your Train</h1>
+    <p class="app">A Real Time Application</p>
+  </div>
+</div>
+
+
+<!-- Train info-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card first">
+        <div id="schedule"></div>
+        <div class="card-header bg-dark text-white">
+        Current Train Schedule
+        </div>
+        <div class="card-body">
+          <!--TABLE-->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency</th>
+                <th scope="col">Next Arrival</th>
+                <th scope="col">Minutes Away</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Midnight Carriage</td>
+                <td>Philadelphia</td>
+                <td>15</td>
+                <td>5:35 PM</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Oregon Trail</td>
+                <td>Salem, Oregon</td>
+                <td>3600</td>
+                <td>1:39 PM</td>
+                <td>1154</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>   
+  </div>  
+</div>
+
+
+<!--Add Train Form -->
+<div class="container">
+  <div class="card second">
+    <div id="add"></div>
+    <div class="card-header bg-dark text-white">
+    Add Train
+    </div>
+    <div class="card-body">
+    <!--Add Train Form -->
+      <form>
+        <div class="form-group">
+          
+          <!--Train Name Input-->
+          <label for="trainName">Train Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Train Name">
+        </div>
+
+        <!--Train Destination Input-->
+        <div class="form-group">
+          <label for="Destination">Destination:</label>
+          <input type="text" class="form-control" id="Destination" placeholder="Enter Destination">
+        </div>
+ 
+        <!--Train Time Input-->
+        <div class="form-group">
+          <label for="time">First Train Time (HH:mm - military time):</label>
+          <input type="text" class="form-control" id="time" placeholder="Enter time">
+        </div>
+
+        <!--Train Frequency Input-->
+        <div class="form-group">
+          <label for="frequency">Frequency (min):</label>
+          <input type="text" class="form-control" id="frequency" placeholder="Frequency in minutes">
+        </div>
+
+        <!--Submit Button-->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!---footer-->
+
+<footer>
+    <h6 class="text-center"><strong>&copy;Copyright2017 Cristina Zhang</strong></h6>
+</footer>
+
+
+<!-- adding jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!--adding JavaScript-->
+ <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+</body>
+</html>
