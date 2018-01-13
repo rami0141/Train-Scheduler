@@ -6,6 +6,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Boogaloo|Ubuntu" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+
+  <!-- Added Moment JS -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  
 </head>
 <body>
 
@@ -25,7 +30,7 @@
 <!-- Image Jumbotron -->
 
 <div class="jumbotron">
-  <div class="container">
+  <div class="container main">
     <h1 class="display-4">Find Your Train</h1>
     <p class="app">A Real Time Application</p>
   </div>
@@ -54,27 +59,6 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Midnight Carriage</td>
-                <td>Philadelphia</td>
-                <td>15</td>
-                <td>5:35 PM</td>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td>Oregon Trail</td>
-                <td>Salem, Oregon</td>
-                <td>3600</td>
-                <td>1:39 PM</td>
-                <td>1154</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
             </tbody>
           </table>
         </div>
@@ -98,19 +82,19 @@
           
           <!--Train Name Input-->
           <label for="trainName">Train Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter Train Name">
+          <input type="text" class="form-control" id="trainName" placeholder="Enter Train Name">
         </div>
 
         <!--Train Destination Input-->
         <div class="form-group">
-          <label for="Destination">Destination:</label>
-          <input type="text" class="form-control" id="Destination" placeholder="Enter Destination">
+          <label for="destination">Destination:</label>
+          <input type="text" class="form-control" id="destination" placeholder="Enter Destination">
         </div>
  
         <!--Train Time Input-->
         <div class="form-group">
-          <label for="time">First Train Time (HH:mm - military time):</label>
-          <input type="text" class="form-control" id="time" placeholder="Enter time">
+          <label for="trainTime">First Train Time (HH:mm - military time):</label>
+          <input type="text" class="form-control" id="trainTime" placeholder="Enter time">
         </div>
 
         <!--Train Frequency Input-->
@@ -120,7 +104,7 @@
         </div>
 
         <!--Submit Button-->
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" id="submit">Submit</button>
       </form>
     </div>
   </div>
