@@ -44,8 +44,10 @@
 
   });
 
+
 //Firebase event for adding train info to the database and a row in the html
-  	database.ref().on("child_added", function(snapshot){
+  	database.ref().on("child_added", function trainInfo(snapshot){
+  		
   		console.log(snapshot.val().name);
   		console.log(snapshot.val().destination);
   		console.log(snapshot.val().time);
@@ -64,29 +66,41 @@
   
    		// First Time 
     	var timeConverted = moment(time, "hh:mm")
-    	console.log(timeConverted);
+    	
 
 		// Current Time
     	var currentTime = moment();
-    	console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
     	
     	// Difference between the times
-    	var diffTime = moment().diff(moment(timeConverted), "minutes");
-    	//console.log("DIFFERENCE IN TIME: " + diffTime);
+    	var difference = moment().diff(moment(timeConverted), "minutes");
+    	
 
     	// Time apart (remainder)
-    	var tRemainder = diffTime % frequency;
-    	//console.log("remainder:" +tRemainder);
+    	var tRemainder = difference % frequency;
+    	
 
-    	// Minute Until Train
+    	//Minute Until Train
     	var minutesAway = frequency - tRemainder;
-    	console.log("MINUTES TILL TRAIN: " + minutesAway);
+    	
 
     	// Next Train
    	 	var nextArrival = moment().add(minutesAway, "minutes");
    	 	nextArrival = moment(nextArrival).format("hh:mm");
-    	console.log("ARRIVAL TIME: " + moment(nextArrival));
+    
 
+    	
   		// Add train info to the table
   		$(".table > tbody").append("<tr><td>" + name + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextArrival + "</td><td>" +  minutesAway + "</td></tr>");
+  	
+  		update();
+
   	});
+
+function update(){
+	setInterval(updatetime, 60000);
+}
+ 
+function updatetime(){
+
+}
+
