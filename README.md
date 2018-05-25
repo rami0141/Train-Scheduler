@@ -14,7 +14,7 @@ Administrators can submit the following:
 
 - JavaScript
 - jQuery
-- [BootStrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) Front-End framework
+- [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) Front-End framework
 - [Firebase](https://firebase.google.com/docs/database/) Real Time cloud-hosted database
 
 ## Deployed
